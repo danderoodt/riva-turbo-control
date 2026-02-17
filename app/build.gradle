@@ -3,8 +3,9 @@ plugins {
 }
 
 android {
-    namespace 'com.rivaturbox.volumecontrol'
     compileSdk 34
+        namespace 'com.rivaturbox.volumecontrol'
+
 
     defaultConfig {
         applicationId "com.rivaturbox.volumecontrol"
