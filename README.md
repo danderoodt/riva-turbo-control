@@ -180,3 +180,41 @@ Falls Sie Probleme haben:
 ---
 
 **Genießen Sie die volle Lautstärke Ihres RIVA Turbo X! 🎵🔊**
+
+
+## 🔧 Build-Anweisungen
+
+### Voraussetzungen
+- JDK 17 oder höher
+- Android SDK (API Level 21+)
+- Gradle 9.3.1
+
+### Lokal bauen
+
+1. **Repository klonen**:
+   ```bash
+   git clone https://github.com/danderoodt/riva-turbo-control.git
+   cd riva-turbo-control
+   ```
+
+2. **Debug-APK erstellen**:
+   ```bash
+   ./gradlew assembleDebug
+   ```
+   Die APK befindet sich dann in: `app/build/outputs/apk/debug/`
+
+3. **Release-APK erstellen** (signiert):
+   ```bash
+   ./gradlew assembleRelease
+   ```
+
+### Automatischer Build via GitHub Actions
+
+Bei jedem Push auf den `main`-Branch wird automatisch eine APK erstellt.
+Die APK kann unter "Actions" → "Android APK Build" → neuester Run → "Artifacts" heruntergeladen werden.
+
+### Häufige Build-Probleme
+
+- **AndroidManifest.xml Fehler**: Stelle sicher, dass die XML-Syntax korrekt ist
+- **Gradle-Cache-Probleme**: Führe `./gradlew clean` aus
+- **JDK-Version**: Verwende JDK 17 (nicht höher/niedriger)
